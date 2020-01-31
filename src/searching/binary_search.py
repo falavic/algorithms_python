@@ -1,5 +1,7 @@
 class BinarySearch:
-    def binarySearch(self, item, items_list):
+
+    @staticmethod
+    def binary_search(item, items_list):
         result = -1
         index = len(items_list) // 2
 
@@ -20,17 +22,19 @@ class BinarySearch:
 
         return result
 
+
 def main():
     items_list = [1, 2, 3, 4, 5]
     item = 7
 
     bs = BinarySearch()
-    result = bs.binarySearch(item, items_list)
+    result = bs.binary_search(item, items_list)
 
     if result != -1:
         print(f"element found at index: {result}")
     else:
         print(f"item not found")
+
 
 if __name__ == "__main__":
     main()
