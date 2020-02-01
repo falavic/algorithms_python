@@ -27,8 +27,7 @@ def main():
     items_list = [1, 2, 3, 4, 5]
     item = 7
 
-    bs = BinarySearch()
-    result = bs.binary_search(item, items_list)
+    result = BinarySearch.binary_search(item, items_list)
 
     if result != -1:
         print(f"element found at index: {result}")
