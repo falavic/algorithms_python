@@ -2,30 +2,27 @@ class BinarySearch:
 
     @staticmethod
     def binary_search(item, items_list):
-        result = -1
-        index = len(items_list) // 2
+        left = 0
+        right = len(items_list) - 1
 
-        if items_list[0] == item:
-            return 0
+        while left <= right:
+            middle = (left + right) // 2
 
-        if items_list[len(items_list) - 1] == item:
-            return len(items_list) - 1
+            if items_list[middle] == item:
+                return middle
 
-        while index != 0 and index != len(items_list) - 1:
-            if items_list[index] == item:
-                result = index
-                break
-            elif item < items_list[index]:
-                index = index // 2
-            else:
-                index = (index + len(items_list)) // 2
+            elif items_list[middle] < item:
+                left = middle + 1
 
-        return result
+            elif items_list[middle] > item:
+                right = middle - 1
+
+        return -1
 
 
 def main():
-    items_list = [1, 2, 3, 4, 5]
-    item = 7
+    items_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    item = 10
 
     result = BinarySearch.binary_search(item, items_list)
 
